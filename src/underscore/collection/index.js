@@ -82,3 +82,22 @@ var indexResult = _.indexBy(stooges, 'name')
 console.log(indexResult)
 
 // countBy 类似groupBy， 返回的是数量而不是值
+var countByResult = _.countBy(list, el => el > 2 ? "s" : 'b')
+console.log(countByResult)
+
+// test shuffle
+var shuffleResult = _.shuffle(list)
+console.log(shuffleResult)
+
+// test sample 取样
+var sampleResult = _.sample(list, 2)
+console.log(sampleResult)
+
+// toArray == Array.from()
+
+// test size
+console.log(_.size(list))
+
+// test partition
+var partitionResult = _.partition(list, el => el > 3)
+console.log(partitionResult)
