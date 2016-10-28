@@ -64,3 +64,5 @@ console.log(_.propertyOf(num)("2"))
 
 //  matcher return a predicate
 
+// many test function isXXX
+
