@@ -9,6 +9,7 @@
   <!-- ========= -->
   <!-- Your HTML -->
   <!-- ========= -->
+  <div id="container">Loading</div>
 
   <!-- ========= -->
   <!-- Libraries -->
@@ -23,11 +24,16 @@
   <!-- =============== -->
   <script type="text/javascript">
   var AppView = Backbone.View.extend({
-    var self = this
     el: '#container',
-    initialize: () => self.render()
-    render: () => self.$el.html("Hello World")
+    initialize: function() {
+      this.render()
+    },
+    render: function() {
+      this.$el.html("hello world")
+    }
   })
+
+  var appView = new AppView();
   </script>
   
 </body>
