@@ -22,7 +22,12 @@
   <!-- Javascript code -->
   <!-- =============== -->
   <script type="text/javascript">
-    // your JS code goes here
+  var AppView = Backbone.View.extend({
+    var self = this
+    el: '#container',
+    initialize: () => self.render()
+    render: () => self.$el.html("Hello World")
+  })
   </script>
   
 </body>
