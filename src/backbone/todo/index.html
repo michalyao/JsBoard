@@ -31,6 +31,7 @@
   <!-- Javascript code -->
   <!-- =============== -->
   <script type="text/javascript">
+    // ---------------------------- View -----------------------------
     var AppView = Backbone.View.extend({
       el: '#container',
       initialize: function() {
@@ -43,6 +44,7 @@
     })
     var appView = new AppView()
 
+    // ---------------------------- Model -----------------------------
     var app = {} // namespace
 
     app.Todo = Backbone.Model.extend({
@@ -59,6 +61,23 @@
     todo.set('create_at', Date())
     todo.get('create_at')
     // ----------------------------test end-----------------------------
+
+    // ---------------------------- Collection -----------------------------
+    app.TodoList = Backbone.Collection.extend({
+      model: app.Todo,
+      localStorage: new Store("backbone-todo")
+    })
+
+    app.todoList = new app.TodoList()
+
+    // ----------------------------test begin-----------------------------
+    var todoList = new app.TodoList()
+    todoList.create({title: 'Learn Backbone\'s Collection'}); // notice: that `completed` will be set to false by default.
+    var lmodel = new app.Todo({title: 'Learn Models', completed: true});
+    todoList.add(lmodel);
+    todoList.pluck('title');     // ["Learn Backbone's Collection", "Learn Models"]
+    todoList.pluck('completed'); // [false, true]
+    JSON.stringify(todoList);
 
 
   </script>
