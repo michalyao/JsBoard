@@ -6,6 +6,8 @@
 
 ### Router
 
+Router in Backbone are hash maps that match URL patterns to functions.
+
 ### View
 
 **View is actually a controller.**
