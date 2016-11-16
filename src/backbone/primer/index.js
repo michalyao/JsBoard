@@ -17,3 +17,9 @@ kermit.fetch().then(() => {
   kermit.set('occupation', 'muppet ringleader');
   kermit.save();
 });
+
+
+var MuppetsCollection = Backbone.Collection.extend({
+  url: '/muppets',
+  model: KermitModel
+})
